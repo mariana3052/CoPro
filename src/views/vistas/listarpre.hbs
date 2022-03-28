@@ -1,0 +1,30 @@
+<section class="pt-4">
+    <div class="container">
+        <div class="row">
+
+            {{#each Preguntas}}
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2 mb-4" style="width: 18rem;">
+                <div class="card card-header">
+                    <h5>Título: {{Titulo}}</h5>
+                </div>
+                <div class="card card-body">
+                    <p class="card-text">Descripción: {{Descripcion}}</p>
+                    <p class="card-text">Categoría: {{Categoria}}</p>
+                    <p class="card-text">Usuario: {{fkUsuario}}</p>
+                    <img class="card-img-top">Imagen: {{Imagen}}</img>
+                    <a href="/vistas/delete/{{Id}}" class="btn btn-danger">Eliminar Pregunta</a>
+                    <a href="/vistas/edit/{{Id}}" class="btn btn-secondary">Editar Pregunta</a>
+                </div>
+            </div>
+            {{!-- {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay libros registrados</p>
+                    <a href="/links/add">Agrega uno</a>
+                </div>
+            </div> --}}
+            {{/each}}
+
+        </div>
+    </div>
+</section>  

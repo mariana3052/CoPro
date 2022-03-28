@@ -13,18 +13,18 @@ CREATE TABLE Preguntas(
     Id int PRIMARY KEY AUTO_INCREMENT,
     Titulo varchar(100),
     Descripcion varchar(800),
-    Imagen varchar(100),
-    Categoría enum('MySQL', 'SQL Server', 'C#', 'C++', 'Java Script', 'NodeJS'),
+    Categoria enum('MySQL', 'SQL Server', 'C#', 'C++', 'Java Script', 'NodeJS'),
     fkUsuario int,
+    Imagen varchar(100),
     CONSTRAINT fkUsuario FOREIGN KEY (fkUsuario) REFERENCES Usuarios(Id)
 );
 
 CREATE TABLE Respuestas(
     Id int PRIMARY KEY AUTO_INCREMENT,
     Respuesta varchar(800),
-    Imagen varchar(100),
     fkPregunta int,
     fkUsuario int,
+    Imagen varchar(100),
     CONSTRAINT fkPregunta FOREIGN KEY (fkPregunta) REFERENCES Preguntas(Id),
     CONSTRAINT fkUsu FOREIGN KEY (fkUsuario) REFERENCES Usuarios(Id)
 );
