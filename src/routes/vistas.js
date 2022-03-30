@@ -57,6 +57,15 @@ router.get('/resp', async (req, res) => {
     res.render('vistas/listarres', { Respuestas }); 
 });
 
+router.get('/comunidad', async (req, res) => {
+    const Comunidad = await pool.query('SELECT * FROM Preguntas');
+    console.log(Comunidad);
+
+    const Comunidadc = await pool.query('SELECT * FROM Respuestas');
+    console.log(Comunidadc);
+    res.render('vistas/comunidad', { Comunidad, Comunidadc }); 
+});
+
 //ELIMINAR DATOS
 router.get('/delete/:Id', async (req, res) => {
     const { Id } = req.params;
