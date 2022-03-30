@@ -1,10 +1,11 @@
 <section class="pt-4">
     <div class="container">
+        <h2>Preguntas</h2>
         <div class="row">
 
             {{#each Preguntas}}
             <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2 mb-4" style="width: 18rem;">
-                <div class="card card-header">
+                <div class="card card-header" style="background-color: #1C996C;">
                     <h5>Título: {{Titulo}}</h5>
                 </div>
                 <div class="card card-body">
@@ -12,10 +13,13 @@
                     <p class="card-text">Categoría: {{Categoria}}</p>
                     <p class="card-text">Usuario: {{fkUsuario}}</p>
                     <img class="card-img-top">Imagen: {{Imagen}}</img>
-                    <a href="/vistas/delete/{{Id}}" class="btn btn-danger">Eliminar Pregunta</a>
-                    <a href="/vistas/edit/{{Id}}" class="btn btn-secondary">Editar Pregunta</a>
+                    <div>
+                        <a href="/vistas/delete/{{Id}}" class="btn btn-danger">Eliminar Pregunta</a>
+                        <a href="/vistas/edit/{{Id}}" class="btn btn-secondary">Editar Pregunta</a>
+                    </div>
                 </div>
             </div>
+
             {{!-- {{else}}
             <div class="col-md-4 mx-auto">
                 <div class="card card-body text-center">

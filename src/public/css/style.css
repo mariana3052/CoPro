@@ -1,9 +1,22 @@
 .btn-b{
-    background-color: #cb5dda ;
+    background-color: #FF937A ;
     color: white;
 }
 
 .btn-b:hover{
-    background-color: #9870a3;
+    background-color: #ffbfb1;
     color: white;
 }
+
+.nav-m{
+    background-color: #E67358;
+}
+
+body{
+    background: #f5f6fa;
+}
+
+#Imagen img{
+    max-width: 100%;
+}
+
