@@ -1,106 +1,62 @@
 <section class="pt-4 pb-4">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <div class="row">
-                    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
-                        <form action="/vistas/preguntas" method="POST">
-                            <div class="form-group">
-                                <h3>Nueva Pregunta</h3>
-                            </div>
+  <div class="container">
+      <div class="row">
+          <div class="col text-center">
+              <div class="row">
+                  <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 pt-2">
+                      <form action="/vistas/preguntas" method="POST">
+                          <div class="form-group">
+                              <h3>Nueva Pregunta</h3>
+                          </div>
 
-                            <div class="form-row">
-                                <div class="col-12 col-md-12 form-group">
-                                    <input type="text" name="Titulo" class="form-control" placeholder="Título" autofocus>
-                                </div>
-                            </div>
+                          <div class="form-row">
+                              <div class="col-12 col-md-12 form-group">
+                                  <input type="text" name="Titulo" class="form-control" placeholder="Título" autofocus>
+                              </div>
+                          </div>
 
-                            <div class="form-row">
-                                <div class="col form-group"> 
-                                    <textarea name="Descripcion" class="form-control" placeholder="Descripción"></textarea>
-                                </div>
-                            </div>
+                          <div class="form-row">
+                              <div class="col form-group"> 
+                                  <textarea name="Descripcion" class="form-control" placeholder="Descripción"></textarea>
+                              </div>
+                          </div>
 
-                            <div class="form-row">
-                                <div class="col-12 col-md-12 form-group">
-                                    <select name="Categoria" class="form-control">
-                                        <option hidden selected>Categoría</option>
-                                        <option>MySQL</option>
-                                        <option>SQL Server</option>
-                                        <option>C#</option>
-                                        <option>C++</option>
-                                        <option>Java Script</option>
-                                        <option>NodeJS</option>
-                                    </select>
-                                </div>
-                            </div>  
+                          <div class="form-row">
+                              <div class="col-12 col-md-12 form-group">
+                                  <select name="Categoria" class="form-control">
+                                      <option hidden selected>Categoría</option>
+                                      <option>MySQL</option>
+                                      <option>SQL Server</option>
+                                      <option>C#</option>
+                                      <option>C++</option>
+                                      <option>Java Script</option>
+                                      <option>NodeJS</option>
+                                  </select>
+                              </div>
+                          </div>  
 
-                            <div class="form-row">
-                                <div class="col-12 col-md-12 form-group">
-                                    <input type="text" name="fkUsuario" class="form-control" placeholder="Usuario">
-                                </div>
-                            </div>
+                          <div class="form-row">
+                              <div class="col-12 col-md-12 form-group">
+                                  <input type="text" name="fkUsuario" class="form-control" placeholder="Usuario">
+                              </div>
+                          </div>
 
-                            <div class="form-row">
-                                <div class="col-12 col-md-12 form-group">
-                                    <label>Imagen</label><br>
-                                    <input type="file" name="Imagen">
-                                </div>
-                            </div>
+                          <div class="form-row">
+                              <div class="col-12 col-md-12 form-group">
+                                  <label>Imagen</label><br>
+                                  <input type="file" name="Imagen">
+                              </div>
+                          </div>
 
-                            
-
-
-
-                            <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-  </div>
-</div>
-
-<div class="input-group mb-3">
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile02">
-    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
-  </div>
-  <div class="input-group-append">
-    <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
-  </div>
-</div>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Button</button>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
-    <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
-  </div>
-</div>
-
-<div class="input-group">
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-    <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-  </div>
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
-  </div>
-</div>
-
-                            <div class="form-row">
-                                <div class="col form-group"> 
-                                    <button type="submit" class="btn btn-b btn-block">Agregar Pregunta</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>  
-    </div>  
+                          <div class="form-row">
+                              <div class="col form-group"> 
+                                  <button type="submit" class="btn btn-b btn-block">Agregar Pregunta</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>  
+  </div>  
 </section>

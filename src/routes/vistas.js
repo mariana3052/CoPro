@@ -16,7 +16,7 @@ router.post('/preguntas', async(req, res)=>
         Titulo, 
         Descripcion,
         Categoria,
-        fkUsuario,
+        fkUsuario: req.user.Id,
         Imagen
     };
     await pool.query('INSERT INTO Preguntas set ?', [newPregunta]);
@@ -35,7 +35,7 @@ router.post('/respuestas', async(req, res)=>
     const newRespuesta = {
         Respuesta, 
         fkPregunta,
-        fkUsuario,
+        fkUsuario: req.user.Id,
         Imagen
     };
     await pool.query('INSERT INTO Respuestas set ?', [newRespuesta]);
@@ -46,13 +46,13 @@ router.post('/respuestas', async(req, res)=>
 
 //LISTAR DATOS
 router.get('/', async (req, res) => {
-    const Preguntas = await pool.query('SELECT * FROM Preguntas');
+    const Preguntas = await pool.query('SELECT * FROM Preguntas WHERE fkUsuario = ?', [req.user.Id]);
     console.log(Preguntas);
     res.render('vistas/listarpre', { Preguntas }); 
 });
 
 router.get('/resp', async (req, res) => {
-    const Respuestas = await pool.query('SELECT * FROM Respuestas');
+    const Respuestas = await pool.query('SELECT * FROM Respuestas WHERE fkUsuario = ?', [req.user.Id]);
     console.log(Respuestas);
     res.render('vistas/listarres', { Respuestas }); 
 });
