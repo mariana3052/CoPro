@@ -8,10 +8,19 @@ const MySQLStore = require('express-mysql-session');
 const { database } = require('./keys');
 const passport = require('passport');
 
+const multer = require('multer');
+
 
 //Inicializacion
 const app = express();
 require('./lib/passport');
+
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, 'public/img'),
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  } 
+});
 
 //Configuraciones
 app.set('port', process.env.PORT || 5000);
@@ -38,6 +47,11 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(multer({
+  storage,
+  dest: path.join(__dirname, 'public/img')
+}).single('imagen'));
 
 //Variables globales
 app.use((req, res, next) => {
