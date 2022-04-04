@@ -11,6 +11,6 @@ router.get('/', (req, res) => {
 router.post('/subir', multer, (req, res) => {
     console.log(req.file);
     res.render('/vistas');
-  });
+});
 
 module.exports = router;

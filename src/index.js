@@ -49,7 +49,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(multer({
-  storage,
+  storage:storage,
   dest: path.join(__dirname, 'public/img')
 }).single('imagen'));
 

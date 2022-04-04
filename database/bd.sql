@@ -1,3 +1,4 @@
+-- Base de datos
 CREATE DATABASE Copro;
 
 USE Copro;

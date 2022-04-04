@@ -11,13 +11,14 @@ router.get('/preguntas', isLoggedIn, (req, res)=>
 
 router.post('/preguntas', isLoggedIn, async(req, res)=>
 {
-    const { Titulo, Descripcion, Categoria, fkUsuario, Imagen } = req.body;
+    const { Titulo, Descripcion, Categoria, fkUsuario } = req.body;
+    const imagen = req.file.originalname;
     const newPregunta = {
         Titulo, 
         Descripcion,
         Categoria,
         fkUsuario: req.user.Id,
-        Imagen
+        imagen
     };
     await pool.query('INSERT INTO Preguntas set ?', [newPregunta]);
     req.flash('success', 'Pregunta guardada correctamente');
@@ -31,12 +32,13 @@ router.get('/respuestas', isLoggedIn, (req, res)=>
 
 router.post('/respuestas', isLoggedIn, async(req, res)=>
 {
-    const { Respuesta, fkPregunta, fkUsuario, Imagen } = req.body;
+    const { Respuesta, fkPregunta, fkUsuario } = req.body;
+    const imagen = req.file.originalname;
     const newRespuesta = {
         Respuesta, 
         fkPregunta,
         fkUsuario: req.user.Id,
-        Imagen
+        imagen
     };
     await pool.query('INSERT INTO Respuestas set ?', [newRespuesta]);
     req.flash('success', 'Respuesta guardada correctamente');
